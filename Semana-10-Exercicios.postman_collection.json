@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "a55386ed-cfd8-4de0-a5e7-2b3457f6afca",
+		"name": "Semana 10 - Exercícios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38383834",
+		"_collection_link": "https://minesoft-gabriel.postman.co/workspace/FuturoDev~6126e3f4-453a-45ec-972b-7406c330a49a/collection/38383834-a55386ed-cfd8-4de0-a5e7-2b3457f6afca?action=share&source=collection_link&creator=38383834"
+	},
+	"item": [
+		{
+			"name": "login (exercício)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeUsuario\": \"raiz\",\n    \"senha\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
