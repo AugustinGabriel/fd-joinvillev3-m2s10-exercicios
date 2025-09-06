@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "login (exercício)",
+			"name": "login",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -17,7 +17,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nomeUsuario\": \"raiz\",\n    \"senha\": \"123\"\n}",
+					"raw": "{\n    \"nomeUsuario\": \"comum\",\n    \"senha\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -37,11 +37,35 @@
 			"response": []
 		}
 	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "",
-			"type": "default"
+			"value": ""
 		}
 	]
 }
