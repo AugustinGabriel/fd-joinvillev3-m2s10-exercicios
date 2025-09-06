@@ -1,7 +1,9 @@
 package br.futurodev.jmt.m2s10ex.entidades;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "organizacoes")
 public class OrganizacaoEntity {

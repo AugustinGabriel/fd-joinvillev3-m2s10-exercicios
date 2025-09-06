@@ -3,6 +3,7 @@ package br.futurodev.jmt.m2s10ex.configs;
 import br.futurodev.jmt.m2s10ex.enums.Perfil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,8 +23,16 @@ public class SegurancaConfig {
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
+                        // Públicos
                         .requestMatchers("/login").permitAll()
+
+                        // Usuários
                         .requestMatchers("/usuarios/**").hasAuthority(Perfil.ADMIN.name())
+
+                        // Organizações
+                        .requestMatchers(HttpMethod.GET, "/organizacoes/**").hasAnyAuthority(Perfil.ADMIN.name(), Perfil.USER.name())
+                        .requestMatchers("/organizacoes/**").hasAuthority(Perfil.ADMIN.name())
+
                         .anyRequest().denyAll()
                 );
 
